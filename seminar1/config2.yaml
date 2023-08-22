@@ -1,0 +1,7 @@
+url1: "https://test-stand.gb.ru/gateway/login"
+url2: "https://test-stand.gb.ru/api/posts"
+username: 'user987'
+password: '292963b966'
+title: "python"
+description: "REST API in python"
+content: "for testing REST API — Request"
