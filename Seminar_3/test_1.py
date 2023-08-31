@@ -1,0 +1,53 @@
+from testpage import OperationHelper
+import logging
+import time
+
+
+from selenium.webdriver.support.wait import WebDriverWait
+
+
+# def test_step1(browser):
+#     logging.info("Test1 Starting")
+#     testpage = OperationHelper(browser)
+#     testpage.go_to_site()
+#     testpage.enter_login("test")
+#     testpage.enter_pass("test")
+#     testpage.click_login_button()
+#     assert testpage.get_error_text() == "401", "Test_1 FAIL"
+#
+#
+# def test_step2(browser):
+#     logging.info("Test2 Starting")
+#     testpage = OperationHelper(browser)
+#     testpage.go_to_site()
+#     testpage.enter_login("user987")
+#     testpage.enter_pass("292963b966")
+#     testpage.click_login_button()
+#     testpage.click_to_do_new_post()
+#     testpage.enter_title("Hello, world")
+#     testpage.enter_description("help")
+#     testpage.enter_content("Bye, world")
+#     testpage.click_save_button()
+#     time.sleep(5)
+#     assert testpage.get_title_text() == "Hello, world", "Test_2 FAIL"
+
+# Задание
+# Условие: Добавить в проект тест по проверке механики работы формы Contact Us на главной странице личного кабинета.
+# Должно проверятся открытие формы, ввод данных в поля, клик по кнопке и появление всплывающего alert.
+# Совет: переключиться на alert можно командой alert = self.driver.switch_to.alert
+# Вывести текст alert.text
+
+def test_step3(browser):
+    logging.info("Test2 Starting")
+    testpage = OperationHelper(browser)
+    testpage.go_to_site()
+    testpage.enter_login("user987")
+    testpage.enter_pass("292963b966")
+    testpage.click_login_button()
+    testpage.click_contact_button()
+    testpage.enter_name("Eva")
+    testpage.enter_email("any@mail.ru")
+    testpage.enter_contact_content("my contact")
+    testpage.contact_us_save_button()
+    time.sleep(5)
+    assert testpage.alert() == "Form successfully submitted", "Test_3 FAIL"
